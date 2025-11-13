@@ -2,14 +2,11 @@
 @tailwind components;
 @tailwind utilities;
 
-/* Ramen Yard Custom Styles */
-/* Minimal helpers for ramen palette when needed outside tailwind tokens */
-.bg-ramen-cream { background-color: #FFF3E0; }
-.bg-ramen-beige { background-color: #F7E7CE; }
-.text-ramen-red { color: #D7263D; }
-.text-ramen-dark { color: #0B0A0A; }
-.border-ramen-sesame { border-color: #D1C7B7; }
-.ring-ramen-gold { --tw-ring-color: #E0A106; }
+/* Khrime Gothic Black & Gray Theme */
+/* Note: Body styles are applied in App.tsx, not globally, to avoid affecting AdminDashboard */
+
+/* Custom scrollbar for dark theme - only applies to main app */
+/* Note: Scrollbar styles are now scoped to avoid affecting AdminDashboard */
 
 /* Hide scrollbar for mobile nav */
 .scrollbar-hide {

@@ -45,7 +45,7 @@ const Menu: React.FC<MenuProps> = ({ menuItems, addToCart, cartItems, updateQuan
     const element = document.getElementById(categoryId);
     if (element) {
       const headerHeight = 64; // Header height
-      const mobileNavHeight = 60; // Mobile nav height
+      const mobileNavHeight = 0; // Mobile nav hidden
       const offset = headerHeight + mobileNavHeight + 20; // Extra padding
       const elementPosition = element.offsetTop - offset;
       
@@ -87,17 +87,35 @@ const Menu: React.FC<MenuProps> = ({ menuItems, addToCart, cartItems, updateQuan
 
   return (
     <>
-      <MobileNav 
-        activeCategory={activeCategory}
-        onCategoryClick={handleCategoryClick}
-      />
+      {/* MobileNav hidden */}
+      <div className="hidden">
+        <MobileNav 
+          activeCategory={activeCategory}
+          onCategoryClick={handleCategoryClick}
+        />
+      </div>
       <main className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-12">
       <div className="text-center mb-12">
-        <h2 className="text-4xl font-noto font-semibold text-black mb-4">Our Menu</h2>
-        <p className="text-gray-600 max-w-2xl mx-auto">
-          Discover our selection of authentic dim sum, flavorful noodles, and traditional Asian dishes, 
-          all prepared with fresh ingredients and authentic techniques.
+        <h2 className="text-4xl md:text-5xl font-gothic-decorative font-bold text-white mb-4 tracking-wider">Our Products</h2>
+        <p className="text-khrime-gray-400 max-w-2xl mx-auto font-gothic">
+          Discover our selection of premium products, all crafted with quality and style.
         </p>
+      </div>
+
+      {/* Hero Image Section */}
+      <div className="relative mb-16 overflow-hidden border-2 border-khrime-gray-800 max-w-4xl mx-auto">
+        <div className="relative w-full h-[250px] md:h-[300px]">
+          <img
+            src="https://xivtfxolxrewkowfenzd.supabase.co/storage/v1/object/public/menu-images/1763037134407-6ppy164wiji.jpg"
+            alt="KHRIME"
+            className="w-full h-full object-cover"
+            loading="lazy"
+            onError={(e) => {
+              console.error('Hero image failed to load:', e);
+            }}
+          />
+          <div className="absolute inset-0 bg-gradient-to-t from-khrime-black/60 via-transparent to-khrime-black/60"></div>
+        </div>
       </div>
 
       {categories.map((category) => {
@@ -107,9 +125,9 @@ const Menu: React.FC<MenuProps> = ({ menuItems, addToCart, cartItems, updateQuan
         
         return (
           <section key={category.id} id={category.id} className="mb-16">
-            <div className="flex items-center mb-8">
+            <div className="flex items-center mb-8 border-b border-khrime-gray-800 pb-4">
               <span className="text-3xl mr-3">{category.icon}</span>
-              <h3 className="text-3xl font-noto font-medium text-black">{category.name}</h3>
+              <h3 className="text-3xl font-gothic font-semibold text-white uppercase tracking-wider">{category.name}</h3>
             </div>
             
             <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
