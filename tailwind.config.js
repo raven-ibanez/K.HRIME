@@ -25,9 +25,10 @@ export default {
         }
       },
       fontFamily: {
-        'gothic': ['Cinzel', 'serif'],
-        'gothic-decorative': ['Cinzel Decorative', 'serif'],
-        'display': ['Playfair Display', 'serif']
+        'gothic': ['Exo 2', 'sans-serif'],
+        'gothic-decorative': ['Exo 2', 'sans-serif'],
+        'display': ['Exo 2', 'sans-serif'],
+        'playfair': ['Exo 2', 'sans-serif']
       },
       animation: {
         'fade-in': 'fadeIn 0.5s ease-in-out',
